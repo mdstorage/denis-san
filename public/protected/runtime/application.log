@@ -22512,3 +22512,56 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2014/12/23 15:55:22 [error] [php] Undefined variable: aSecGrouppic (E:\Denis\webprogr\denis-san\public\protected\controllers\SiteController.php:170)
+Stack trace:
+#0 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CController.php(286): SiteController->runAction()
+#3 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#5 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 E:\Denis\webprogr\denis-san\public\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/secgrouppics?catalog=EL&modelSeries=K12E&modelName=MICRA&sDesc_ru=%D0%94%D0%92%D0%98%D0%93%D0%90%D0%A2%D0%95%D0%9B%D0%AC+%28%D0%9C%D0%95%D0%A5%D0%90%D0%9D%D0%98%D0%9A%D0%90%29&pos=1&IdPriGroup=A&IdSecGroup=130&sDesc_en=CAMSHAFT+%26+VALVE+MECHANISM&ModelDir=005&PartCode=13028M
+in E:\Denis\webprogr\denis-san\public\protected\controllers\SiteController.php (170)
+in E:\Denis\webprogr\denis-san\public\index.php (13)
+2014/12/23 18:48:18 [error] [php] Undefined index: pic_num (E:\Denis\webprogr\denis-san\public\protected\controllers\SiteController.php:177)
+Stack trace:
+#0 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CController.php(286): SiteController->runAction()
+#3 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#5 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 E:\Denis\webprogr\denis-san\public\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/secgrouppics?catalog=EL&modelSeries=K12E&modelName=MICRA&sDesc_ru=%D0%94%D0%92%D0%98%D0%93%D0%90%D0%A2%D0%95%D0%9B%D0%AC+%28%D0%9C%D0%95%D0%A5%D0%90%D0%9D%D0%98%D0%9A%D0%90%29&pos=1&IdPriGroup=A&IdSecGroup=130&sDesc_en=CAMSHAFT+%26+VALVE+MECHANISM&ModelDir=005&PartCode=13028M
+in E:\Denis\webprogr\denis-san\public\protected\controllers\SiteController.php (177)
+in E:\Denis\webprogr\denis-san\public\index.php (13)
+2014/12/23 18:54:43 [error] [php] in_array() expects parameter 2 to be array, string given (E:\Denis\webprogr\denis-san\public\protected\controllers\SiteController.php:178)
+Stack trace:
+#0 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CController.php(286): SiteController->runAction()
+#4 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#6 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 E:\Denis\webprogr\denis-san\public\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/secgrouppics?catalog=EL&modelSeries=K12E&modelName=MICRA&sDesc_ru=%D0%94%D0%92%D0%98%D0%93%D0%90%D0%A2%D0%95%D0%9B%D0%AC+%28%D0%9C%D0%95%D0%A5%D0%90%D0%9D%D0%98%D0%9A%D0%90%29&pos=1&IdPriGroup=A&IdSecGroup=130&sDesc_en=CAMSHAFT+%26+VALVE+MECHANISM&ModelDir=005&PartCode=13028M
+in E:\Denis\webprogr\denis-san\public\protected\controllers\SiteController.php (178)
+in E:\Denis\webprogr\denis-san\public\index.php (13)
+2014/12/23 18:56:51 [error] [php] Array to string conversion (E:\Denis\webprogr\denis-san\public\protected\controllers\SiteController.php:182)
+Stack trace:
+#0 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CController.php(286): SiteController->runAction()
+#3 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#5 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 E:\Denis\webprogr\denis-san\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 E:\Denis\webprogr\denis-san\public\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/secgrouppics?catalog=EL&modelSeries=K12E&modelName=MICRA&sDesc_ru=%D0%94%D0%92%D0%98%D0%93%D0%90%D0%A2%D0%95%D0%9B%D0%AC+%28%D0%9C%D0%95%D0%A5%D0%90%D0%9D%D0%98%D0%9A%D0%90%29&pos=1&IdPriGroup=A&IdSecGroup=130&sDesc_en=CAMSHAFT+%26+VALVE+MECHANISM&ModelDir=005&PartCode=13028M
+in E:\Denis\webprogr\denis-san\public\protected\controllers\SiteController.php (182)
+in E:\Denis\webprogr\denis-san\public\index.php (13)

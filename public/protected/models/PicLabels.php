@@ -139,6 +139,19 @@ class PicLabels extends CActiveRecord
 		 
     }
 	
+	public function getPicNum($catalog, $modelSeries, $PartCode)
+    {
+        $aPicNums = Yii::app()->db->CreateCommand()
+            ->select('pic_num')
+            ->from('pic_labels')
+            ->where('catalog = :catalog AND model_series=:modelSeries AND part_code = :PartCode', array(':catalog'=>$catalog, ':modelSeries'=>$modelSeries, ':PartCode'=>$PartCode))
+			->queryAll();
+					
+			
+        return $aPicNums;
+		 
+    }
+	
 	
 	
 	

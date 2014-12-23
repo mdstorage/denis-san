@@ -154,12 +154,44 @@ class SiteController extends Controller
 		
 		
 		if (isset($_COOKIE["cookie"]))
-		$aSecGrouppics = $oSecGrouppics->getSecGroupPics($catalog, $modelSeries, $IdSecGroup, $data, $_COOKIE["cookie"]);
+		
+		{
+			$aSecGrouppics = $oSecGrouppics->getSecGroupPics($catalog, $modelSeries, $IdSecGroup, $data, $_COOKIE["cookie"]);
+		}
 		
 		
 		
 		else
-		$aSecGrouppics = $oSecGrouppics->getSecGroupPics($catalog, $modelSeries, $IdSecGroup); 
+		{
+		$aSecGrouppics = $oSecGrouppics->getSecGroupPics($catalog, $modelSeries, $IdSecGroup);	
+		}
+		 
+		
+		$oPicLabels = new PicLabels();
+		
+		
+		$aPicNums = $oPicLabels->getPicNum($catalog, $modelSeries, $PartCode);
+		
+		foreach ($aSecGrouppics as $index=>$aSecGrouppic)
+		{
+			$anew = array();
+			foreach ($aPicNums as $aPicNum)
+			{
+				$anew [$aPicNum ['pic_num']] = $aPicNum ['pic_num'];
+							
+			}
+				
+			if (!(in_array($aSecGrouppic['pic_num'], $anew)))
+		{
+			unset ($aSecGrouppics[$index]);
+			
+		}
+		
+			
+			
+		}
+		
+		
 		
 		
 		

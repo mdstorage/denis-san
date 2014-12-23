@@ -175,7 +175,7 @@ $string1 = array(')','(');
 	
 	}
 	
-	if ($k==0) unset ($aPartCatalogs[$index1]);
+	if (($k==0) & (count($aPartCatalogs)>1)) unset ($aPartCatalogs[$index1]);
 	 
  }
  
