@@ -166,7 +166,8 @@ class SiteController extends Controller
 		$aSecGrouppics = $oSecGrouppics->getSecGroupPics($catalog, $modelSeries, $IdSecGroup);	
 		}
 		 
-		
+	if ($PartCode != '') 
+	{
 		$oPicLabels = new PicLabels();
 		
 		
@@ -190,6 +191,9 @@ class SiteController extends Controller
 			
 			
 		}
+		
+	}	
+		
 		
 		
 		
