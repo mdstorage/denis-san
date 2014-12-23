@@ -1,4 +1,5 @@
-runtimepublic/protected/config/db.php
-public/images/*
-public/assets/*
-vendor/*
+public/protected/config/db.php
+public/protected/runtime/
+public/images/
+public/assets/
+vendor/
