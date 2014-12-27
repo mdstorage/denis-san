@@ -45,6 +45,7 @@ $this->pageTitle=Yii::app()->name;
 
 <?php 
 
+
 if (!empty($aPartCoords))
 {
     $this->breadcrumbs = array(
@@ -91,7 +92,7 @@ if (!empty($aPartCoords))
 			foreach($aPartCoords as $aPartCoord)
 			{
 			
-			$aPartCoord['part_code'] = str_replace ('+','',$aPartCoord['part_code']);
+			
 				$aPartCoord['part_code']= trim($aPartCoord['part_code']); 
 				if ((strlen($aPartCoord['part_code'])<10) && (strlen($aPartCoord['part_code'])>3))
 				{
@@ -154,6 +155,8 @@ if (!empty($aPartCoords))
 		if ((strlen($aPartCoord['part_code'])<10) && (strlen($aPartCoord['part_code'])>3))
 		{
 			
+			
+			
 					
 		 echo '<a name='.$aPartCoord['part_code'].'></a><div class="btn-default" id="pncs_'.$aPartCoord['part_code'].'">'.$aPartCoord['part_code']." ".$aPartCoord['desc_en'] . '</div><br/>';
                 echo '<table id="table_'.$aPartCoord['part_code'].'" class="';
@@ -176,7 +179,7 @@ if (!empty($aPartCoords))
 				
 				foreach($aPartCatalogs[$aPartCoord['part_code']] as $aPartCatalog)
 					{
-						$aPartCoord['part_code'] = str_replace ('+','',$aPartCoord['part_code']);
+						
 						
                     echo '<tr>';
                     echo '<td><a href='.Yii::app()->params['outUrl'].$aPartCatalog['part_number'].' target="_blank" >'.$aPartCatalog['part_number'].'</a>';
@@ -185,7 +188,20 @@ if (!empty($aPartCoords))
 					echo '</br>Код замены:</br>'.$aPartCatalog['alter_code'].'</td>';
 					else echo '</td>';
                     echo '<td>' .Functions::prodToDate($aPartCatalog['production_start']).' - ' .Functions::prodToDate($aPartCatalog['production_end']).'</td>';
-                    echo '<td>' .$aPartCatalog['complect_restr'].'</td>';
+                    echo '<td>' .$aPartCatalog['complect_restr']; 
+					
+					if ($aPartCatalog['specification'])
+					echo '<br/>'.$aPartCatalog['specification'];
+					
+					if ($aPartCatalog['option_restr'])
+					echo '<br/>speccode: '.$aPartCatalog['option_restr'];
+					
+					
+					
+					echo'</td>';	
+					 
+					
+					
 					
                     echo '</tr>';
 			/*		 echo '<tr>';
@@ -198,34 +214,36 @@ if (!empty($aPartCoords))
 			/*else echo '<a href=' . Yii::app()->params['outUrl'] . $aPartCoord['part_code'] . 'id="pncs_' . $aPartCoord['part_code'].'">' . $aPartCoord['part_code']  .'</a></br>';*/
 				
 					
-				
+				$aPartCoord['part_code'] = str_replace ('+','\+',$aPartCoord['part_code']);
 				
         	
 	    	 echo '
                     <script>
-                        $("#pncs_'.$aPartCoord['part_code'].'").on("mouseover", function(){
+					 
+                        $("#pncs_'.addslashes($aPartCoord['part_code']).'").on("mouseover", function(){
                             $(this).css("cursor", "pointer");
                         });
-                        $("#pncs_'.$aPartCoord['part_code'].'").on("click", function(){
-                            $("#table_'.$aPartCoord['part_code'].'").toggleClass("hidden");
+                        $("#pncs_'.addslashes($aPartCoord['part_code']).'").on("click", function(){
+                            $("#table_'.addslashes($aPartCoord['part_code']).'").toggleClass("hidden");
                             $(this).removeClass("btn-warning btn-info");
                             $(this).toggleClass("btn-success");
                         });
-                        $("area#area'.$aPartCoord['part_code'].'").on("click", function(){
-                            $("#pncs_'.$aPartCoord['part_code'].'").removeClass("btn-info");
-                            $("#pncs_'.$aPartCoord['part_code'].'").toggleClass("btn-warning");
+                        $("area#area'.addslashes($aPartCoord['part_code']).'").on("click", function(){
+                            $("#pncs_'.addslashes($aPartCoord['part_code']).'").removeClass("btn-info");
+                            $("#pncs_'.addslashes($aPartCoord['part_code']).'").toggleClass("btn-warning");
                         });
-                        $("area#area'.$aPartCoord['part_code'].'").on("mouseover", function(){
+                        $("area#area'.addslashes($aPartCoord['part_code']).'").on("mouseover", function(){
 
-                            $("#pncs_'.$aPartCoord['part_code'].'").addClass("btn-info");
+                            $("#pncs_'.addslashes($aPartCoord['part_code']).'").addClass("btn-info");
                         });
-                        $("area#area'.$aPartCoord['part_code'].'").on("mouseout", function(){
-                            $("#pncs_'.$aPartCoord['part_code'].'").removeClass("btn-info");
+                        $("area#area'.addslashes($aPartCoord['part_code']).'").on("mouseout", function(){
+                            $("#pncs_'.addslashes($aPartCoord['part_code']).'").removeClass("btn-info");
                         });
                     </script>
                     ';
 					
 			}
+			
 			echo '</div>';
 				
 				

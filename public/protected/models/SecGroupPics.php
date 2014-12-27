@@ -159,9 +159,10 @@ $string1 = array(')','(');
 	
 	foreach (func_get_arg(4) as $name => $value)
 	{
-	if (substr_count($aSecgrouppic['options'], $value)!=0) 
+	if ((substr_count($aSecgrouppic['options'], $value)!=0) || (substr_count($value, $aSecgrouppic['options'])!=0))
 	$k++;	
 	}
+
 	if (($k==0)&($aSecgrouppic['options']!='ALL') & (count($aSecgrouppics)>1)) unset ($aSecgrouppics[$index1]);
 	
  }
