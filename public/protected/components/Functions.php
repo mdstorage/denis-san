@@ -172,8 +172,8 @@ class Functions
 	public static function getNumberSubstring($string)
 	 {
 	 	
-		$string1 = 'WHL DRV';
-		$string2 = 'WHLDRV';
+		$string1 = array ('WHL DRV', 'EMISSIONFUEL');
+		$string2 = array ('WHLDRV', 'EMISSION FUEL');
 		$string = str_replace($string1, $string2, $string);
 		
 		
