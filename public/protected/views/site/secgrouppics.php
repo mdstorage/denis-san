@@ -43,7 +43,7 @@ $this->pageTitle=Yii::app()->name;
 	$sModelName.'('.$sModelSeries.')'=>array('site/modelcodes', 'catalog'=>$sCatalog,  'modelSeries'=>$sModelSeries, 'modelName'=>$sModelName
         ),
         $pos=>array('site/modelcodes', 'catalog'=>$sCatalog,  'modelSeries'=>$sModelSeries, 'modelName'=>$sModelName, 'pos'=>$pos),
-		$sDesc_ru=>array('site/secgroups', 'catalog'=>$sCatalog,  'modelSeries'=>$sModelSeries, 'modelName'=>$sModelName, 'desc_ru'=>$sDesc_ru, 'pos'=>$pos, 'IdPriGroup'=>$IdPriGroup, 'ModelDir'=>$ModelDir),
+		$sDesc_ru=>array('site/secgroups', 'catalog'=>$sCatalog,  'modelSeries'=>$sModelSeries, 'modelName'=>$sModelName, 'desc_ru'=>$sDesc_ru, 'pos'=>$pos, 'IdPriGroup'=>$IdPriGroup, 'ModelDir'=>$ModelDir, 'NumSecGrPic'=>$NumSecGrPic),
 		$sDesc_en);
 		
 
@@ -93,7 +93,8 @@ $i=1;
 				'sDesc_en'=>$sDesc_en,
 				'PicNum'=>$aSecGrouppic['pic_num'],
 				'ModelDir'=>$aSecGrouppic['model_dir'],
-				'PartCode'=>$PartCode)).'';
+				'PartCode'=>$PartCode,
+				'NumSecGrPic'=>$NumSecGrPic)).'';
 				$i++;
 				echo '</div>';
 	}}

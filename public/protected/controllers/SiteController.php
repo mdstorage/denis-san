@@ -119,7 +119,7 @@ class SiteController extends Controller
         );
 		
     }
-	 public function actionSecgroups ($catalog, $modelSeries, $modelName, $desc_ru, $pos, $IdPriGroup, $ModelDir)
+	 public function actionSecgroups ($catalog, $modelSeries, $modelName, $desc_ru, $pos, $IdPriGroup, $ModelDir, $NumSecGrPic)
     {
 		
        
@@ -136,6 +136,7 @@ class SiteController extends Controller
 				'pos'=>$pos,
 				'IdPriGroup'=>$IdPriGroup,
 				'ModelDir'=>$ModelDir,
+				'NumSecGrPic'=>$NumSecGrPic,
                 'aSecGroups'=>$aSecGroups
                 )
         );
@@ -143,7 +144,7 @@ class SiteController extends Controller
     }
 	
 	
-	 public function actionSecgrouppics ($catalog, $modelSeries, $modelName, $sDesc_ru, $pos, $IdPriGroup, $IdSecGroup, $sDesc_en, $ModelDir , $PartCode)
+	 public function actionSecgrouppics ($catalog, $modelSeries, $modelName, $sDesc_ru, $pos, $IdPriGroup, $IdSecGroup, $sDesc_en, $ModelDir , $PartCode, $NumSecGrPic)
     {
 		$oSecGrouppics = new SecGroupPics();
 		if (isset($_COOKIE["data"]))
@@ -214,14 +215,15 @@ class SiteController extends Controller
                 'aSecGrouppics'=>$aSecGrouppics,
 				'sDesc_en'=>$sDesc_en,
 				'ModelDir'=>$ModelDir,
-				'PartCode'=>$PartCode
+				'PartCode'=>$PartCode,
+				'NumSecGrPic'=>$NumSecGrPic
                 )
         );
 		
     }
 	
 	
-	 public function actionParts ($catalog, $modelSeries, $modelName, $sDesc_ru, $pos, $IdPriGroup, $IdSecGroup, $sDesc_en, $PicNum, $ModelDir, $PartCode)
+	 public function actionParts ($catalog, $modelSeries, $modelName, $sDesc_ru, $pos, $IdPriGroup, $IdSecGroup, $sDesc_en, $PicNum, $ModelDir, $PartCode, $NumSecGrPic)
     {
 		
        $oPicLabels = new PicLabels();
@@ -269,7 +271,8 @@ class SiteController extends Controller
 				'ModelDir'=>$ModelDir,
 				'aPartCoords'=>$aPartCoords,
 				'aPartCatalogs'=>$aPartCatalogs,
-				'PartCode'=>$PartCode
+				'PartCode'=>$PartCode,
+				'NumSecGrPic'=>$NumSecGrPic
 				
                 )
         );
@@ -428,6 +431,7 @@ public function actionFindByArticul()
 		$oPicLabels = new PicLabels();
 		$oSecGroups = new SecGroups();
 		$oPriGroups = new PriGroups();
+		$oPriGroupPics = new PriGroupPics();
 		
         if ($request->isAjaxRequest){
 			
@@ -483,6 +487,7 @@ public function actionFindByArticul()
 			$aInfByPartCode = $oPicLabels->getInfByPartCode($aCatalog['catalog'], $aModelName['model_series'], $aModelName['part_code']);
 			$aPGDescEnById = $oSecGroups->getPGDescEnById($aCatalog['catalog'], $aModelName['model_series'], $aInfByPartCode['sec_group']);
 			$sDescEnById = $oPriGroups->getDescEnById($aCatalog['catalog'], $aModelName['model_series'], $aPGDescEnById['pri_group']);
+			$NumSecGrPic = $oPriGroupPics->getPriGroupForArt($aCatalog['catalog'], $aModelName['model_series'], $aPGDescEnById['pri_group']);
 			
 						
                     echo '<tr>';
@@ -501,7 +506,8 @@ public function actionFindByArticul()
 				'IdSecGroup'=>$aInfByPartCode['sec_group'],
 				'sDesc_en'=>$aPGDescEnById['desc_en'],
 				'ModelDir'=>$aInfByPartCode['model_dir'],
-				'PartCode'=>$aModelName['part_code']
+				'PartCode'=>$aModelName['part_code'],
+				'NumSecGrPic'=>substr($NumSecGrPic, -6, 2)
 				
 				)).'>Посмотреть на схеме</a></td>';
 					

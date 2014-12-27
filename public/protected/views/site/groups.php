@@ -93,7 +93,8 @@ $this->pageTitle=Yii::app()->name;
 				'desc_ru'=>Functions::getRusDesc($aPriGroupCoord['desc_en']),
 				'pos'=>$pos,
 				'IdPriGroup'=>$aPriGroupCoord['pri_group'],
-				'ModelDir'=>$aPriGroupCoord['model_dir'])).'" id="area'.$aPriGroupCoord['pri_group'].'" data-name="area'.$aPriGroupCoord['pri_group'].'">';
+				'ModelDir'=>$aPriGroupCoord['model_dir'],
+				'NumSecGrPic'=>substr($aPriGroupCoord['img_path'], -6, 2))).'" id="area'.$aPriGroupCoord['pri_group'].'" data-name="area'.$aPriGroupCoord['pri_group'].'">';
 			
 			
 			}
@@ -113,7 +114,8 @@ $this->pageTitle=Yii::app()->name;
 				'desc_ru'=>Functions::getRusDesc($aPriGroupCoord['desc_en']),
 				'pos'=>$pos,
 				'IdPriGroup'=>$aPriGroupCoord['pri_group'],
-				'ModelDir'=>$aPriGroupCoord['model_dir'])).'<br/>'. '</div>';
+				'ModelDir'=>$aPriGroupCoord['model_dir'],
+				'NumSecGrPic'=>substr($aPriGroupCoord['img_path'], -6, 2))).'<br/>'. '</div>';
         	
 	    	 echo '
                     <script>

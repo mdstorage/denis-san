@@ -49,12 +49,12 @@ $this->pageTitle=Yii::app()->name;
 
 	$width = Yii::app()->params['imageWidth'];
         if(file_exists(Yii::app()->basePath. '/../images/'.
-            $sCatalog.'/'.$ModelDir.'/grpimg.'.$ModelDir.'.'.'00'.Functions::getNumberbyLetter($IdPriGroup).'.png'))
+            $sCatalog.'/'.$ModelDir.'/grpimg.'.$ModelDir.'.'.'00'.$NumSecGrPic.'.png'))
 			
 			{
 				
 				$size = getimagesize(Yii::app()->basePath. '/../images/'.
-            $sCatalog.'/'.$ModelDir.'/grpimg.'.$ModelDir.'.'.'00'.Functions::getNumberbyLetter($IdPriGroup).'.png');
+            $sCatalog.'/'.$ModelDir.'/grpimg.'.$ModelDir.'.'.'00'.$NumSecGrPic.'.png');
 
             $k = $size[0]/$size[1];
             $kc = $width/$size[0];
@@ -63,8 +63,9 @@ $this->pageTitle=Yii::app()->name;
             
             echo CHtml::image(
                 Yii::app()->request->baseUrl.'/images/'.
-            $sCatalog.'/'.$ModelDir.'/grpimg.'.$ModelDir.'.'.'00'.Functions::getNumberbyLetter($IdPriGroup).'.png', $IdPriGroup,  
+            $sCatalog.'/'.$ModelDir.'/grpimg.'.$ModelDir.'.'.'00'.$NumSecGrPic.'.png', $IdPriGroup,  
 			array("usemap"=>'#'. $IdPriGroup), array("width"=>$width));	
+		
 			}
 		
  
@@ -85,6 +86,7 @@ $this->pageTitle=Yii::app()->name;
 				'sDesc_en'=>$aSecGroup['desc_en'],
 				'ModelDir'=>$ModelDir,
 				'PartCode' =>'',
+				'NumSecGrPic'=>$NumSecGrPic
 				
 				)).'" id="area'.$aSecGroup['Id'].'" data-name="area'.$aSecGroup['Id'].'">';
    }
@@ -115,7 +117,8 @@ $this->pageTitle=Yii::app()->name;
 				'IdSecGroup'=>$aSecGroup['Id'],
 				'sDesc_en'=>$aSecGroup['desc_en'],
 				'ModelDir'=>$ModelDir,
-				'PartCode' =>'')).'<br/>'. '</div>';
+				'PartCode' =>'',
+				'NumSecGrPic'=>$NumSecGrPic)).'<br/>'. '</div>';
         	
 	    	 echo '
                     <script>

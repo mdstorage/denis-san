@@ -108,10 +108,20 @@ class PriGroupPics extends CActiveRecord
         return $aPriGroupPics;
     }
 	
+	public function getPriGroupForArt($catalog, $modelSeries, $Id)
+    {
+        $aPriGroupPics = Yii::app()->db->CreateCommand()
+            ->select('img_path')
+            ->from('pri_group_pics')
+            ->where('catalog = :catalog AND model_series=:modelSeries AND pri_group=:Id', array(':catalog'=>$catalog, ':modelSeries'=>$modelSeries, ':Id'=>$Id))
+            ->queryScalar();	
+        return $aPriGroupPics;
+    }
+	
 	public function getPriGroupCoords($catalog, $modelSeries)
     {
         $query = Yii::app()->db->CreateCommand()
-            ->select('model_dir, pri_group, label_x, label_y')
+            ->select('model_dir, img_path, pri_group, label_x, label_y')
             ->from('pri_group_pics')
             ->where('catalog = :catalog AND model_series=:modelSeries', array(':catalog'=>$catalog, ':modelSeries'=>$modelSeries))
 			->order('pri_group');

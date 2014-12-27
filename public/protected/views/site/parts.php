@@ -53,7 +53,7 @@ if (!empty($aPartCoords))
 	$sModelName.'('.$sModelSeries.')'=>array('site/modelcodes', 'catalog'=>$sCatalog,  'modelSeries'=>$sModelSeries, 'modelName'=>$sModelName
         ),
         $pos=>array('site/modelcodes', 'catalog'=>$sCatalog,  'modelSeries'=>$sModelSeries, 'modelName'=>$sModelName, 'pos'=>$pos),
-		$sDesc_ru=>array('site/secgroups', 'catalog'=>$sCatalog,  'modelSeries'=>$sModelSeries, 'modelName'=>$sModelName, 'desc_ru'=>$sDesc_ru, 'pos'=>$pos, 'IdPriGroup'=>$IdPriGroup, 'ModelDir'=>$ModelDir),
+		$sDesc_ru=>array('site/secgroups', 'catalog'=>$sCatalog,  'modelSeries'=>$sModelSeries, 'modelName'=>$sModelName, 'desc_ru'=>$sDesc_ru, 'pos'=>$pos, 'IdPriGroup'=>$IdPriGroup, 'ModelDir'=>$ModelDir, 'NumSecGrPic'=>$NumSecGrPic),
 		$sDesc_en);
 		
 
@@ -123,7 +123,8 @@ if (!empty($aPartCoords))
 				'IdSecGroup'=>$aPartCoord['part_code'],
 				'sDesc_en'=>$sDesc_en,
 				'ModelDir'=>$ModelDir,
-				'PartCode'=>$PartCode)).
+				'PartCode'=>$PartCode,
+				'NumSecGrPic'=>$NumSecGrPic)).
 				
 				'" id="area'.$aPartCoord['part_code'].'"data-name="area'.$aPartCoord['part_code'].'">';
 				}
