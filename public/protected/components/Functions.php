@@ -105,8 +105,8 @@ class Functions
 	 public static function getString($string)
 	 {
 	 	
-		$string1 = array(';',',','..','(',')');
-		$string2 = array('; ',', ','.. ',' (',') ');
+		$string1 = array(';',',','..','(',')', '.');
+		$string2 = array('; ',', ','.. ',' (',') ', '. ');
 		$string = str_replace($string1, $string2, $string);
 		 
 		 return $string;

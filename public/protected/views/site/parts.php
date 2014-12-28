@@ -189,13 +189,13 @@ if (!empty($aPartCoords))
 					echo '</br>Код замены:</br>'.$aPartCatalog['alter_code'].'</td>';
 					else echo '</td>';
                     echo '<td>' .Functions::prodToDate($aPartCatalog['production_start']).' - ' .Functions::prodToDate($aPartCatalog['production_end']).'</td>';
-                    echo '<td>' .$aPartCatalog['complect_restr']; 
+                    echo '<td>' .Functions::getString($aPartCatalog['complect_restr']); 
 					
 					if ($aPartCatalog['specification'])
 					echo '<br/>'.$aPartCatalog['specification'];
 					
 					if ($aPartCatalog['option_restr'])
-					echo '<br/>speccode: '.$aPartCatalog['option_restr'];
+					echo '<b>speccode:</b> <br/>'.Functions::getString($aPartCatalog['option_restr']);
 					
 					
 					
